@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css">
     <link rel="stylesheet" href="./css/homeless.css">
     <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="./js/fake_hive.js"></script>
     <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
 
     <head>
@@ -18,31 +19,6 @@
     var small_icon = 121;// 242x218; 121 x 90
     var big_icon_height = 256; // 256
     var big_icon_width = 286; // 256
-
-    var bitcoin = bitcoin || {
-        getClientInfo: function (callback) {
-            var info = {
-                firstname: 'Homer',
-                lastname:  'Simpson',
-                email:     'homer@fake.com',
-                address:   'poqjer23rfc234laq',
-                street:    'next to Flanders',
-                zipcode:   '12233',
-                city:      'Springfield',
-                country:   'USA'
-            };
-
-            return callback(info);
-        },
-
-        sendCoins: function (hash, amount, callback) {
-            return callback(true, hash);
-        },
-
-        sendCoinsForAddress: function(hash, amount, callback) {
-            return callback(true, hash);
-        }
-    };
 
     $(document).ready(function(){
         $('img#mainpage').width(window.innerWidth);
