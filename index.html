@@ -56,9 +56,8 @@
 
         $('#done').on('click',function(){
             var donate = parseFloat($('#score').val());
-            bitcoin.sendCoinsForAddress(address, donate, new function(success, transaction_id){
-                if (success){
-
+            bitcoin.sendMoney(address, donate, function(success, transactionId) {
+                if (success) {
                     var margin2 = (window.innerWidth - small_icon)/2; //142
                     $('#imggh').attr("src" , "./css/images/hive_slogan_head_2.png");
                     $('#imgfoot').attr("src", "./css/images/hive_slogan_foot_2.png");
@@ -69,11 +68,6 @@
                         marginLeft:  margin.toString()+'px',
                         marginRight: margin.toString()+'px'
                     }, 'slow');
-                    if (donate < 5){
-                        console.log('hive support done <5');
-                    } else if (donate >= 5){
-                        console.log('hive support done >5');
-                    }
                 }
             });
         });
